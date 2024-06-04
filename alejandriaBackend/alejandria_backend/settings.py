@@ -66,7 +66,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "alejandria_backend.wsgi.application"
 
-""" 
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
@@ -77,9 +77,9 @@ DATABASES = {
         "PORT": os.environ.get("DB_PORT"),
     }
 }
- """
 
-DATABASES = {
+
+""" DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "alejandria",
@@ -88,7 +88,7 @@ DATABASES = {
         "HOST": "localhost",
         "PORT": "5432",
     }
-}
+} """
 
 TIME_ZONE = "America/Bogota"
 
