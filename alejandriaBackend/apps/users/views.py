@@ -177,6 +177,17 @@ class FavoriteListViewSet(viewsets.ModelViewSet):
     queryset = FavoriteList.objects.all()
     serializer_class = FavoriteListSerializer
 
+    # Action to get favorite lists by user ID
+    # /api/favorites/get_favorite_lists/
+    # /api/favorites/get_favorite_lists/<user_id>/
+    @action(detail=True, methods=["GET"])
+    def get_favorite_lists(self, request, pk=None):
+        print(f"pk: {pk}")
+        user = self.get_object()
+        favorite_lists = FavoriteList.objects.filter(user=user)
+        serializer = FavoriteListSerializer(favorite_lists, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
 
 class CartViewSet(viewsets.ModelViewSet):
     queryset = Cart.objects.all()

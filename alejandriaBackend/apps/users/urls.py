@@ -5,7 +5,7 @@ from .views import UserViewSet, RoleViewSet, FavoriteListViewSet, CartViewSet, C
 router = DefaultRouter()
 router.register(r"users", UserViewSet)
 router.register(r"roles", RoleViewSet)
-router.register(r"favoriteList", FavoriteListViewSet)
+router.register(r"favorites", FavoriteListViewSet)
 router.register(r"carts", CartViewSet)
 router.register(r"comments", CommentViewSet)
 
